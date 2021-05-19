@@ -4,12 +4,14 @@ using namespace std;
 void menu();
 bool banding(char *ans, int value);
 char *input(int index);
-void nilai();
+void result(int *betul, int n);
+char nama[11][51];
+
 
 int main(){
-	
-	int pilih, benar, salah;
-	benar = 0;
+	int pilih, benar[11], id;
+	float nilai;
+	id = 0;
 
 	while(true){
 		system("cls");
@@ -19,6 +21,11 @@ int main(){
 
 		switch(pilih){
 			case 1:
+				id++;
+				cout << "Masukkan nama anda : ";
+				cin >> nama[id];
+				static int yes = 0;
+
 				for(int i = 0; i < 5; i++){
 					system("cls");
 					srand(time(NULL));
@@ -27,14 +34,19 @@ int main(){
 					char *answer = input(num);
 					if(banding(answer, num)){
 						cout << "Jawaban anda benar" << endl;
-						benar++;
+						yes++;
 					}else{
 						cout << "Maaf jawaban anda salah" << endl;
 					}
 					system("pause");
 				}
+				benar[id] = yes;
 				break;
-			// case 2:
+
+			case 2:
+				result(benar, id);
+				system("pause");
+				break;
 
 			case 3 :
 				exit(1);
@@ -42,6 +54,7 @@ int main(){
 			default : 
 				cout << "Masukkan anda tidak valid" << endl;
 				system("pause");
+				break;
 
 		}
 	}
@@ -71,12 +84,28 @@ char *input(int index){
 	cout << "Tulis jawaban singkat satu kata menggunakan huruf kecil: ";
 	cin >> jawaban;
 
-	// char *kecil = tolower(*jawaban);
+	static char kecil[51];
+	for(int i = 0; i < strlen(jawaban); i++){
+		kecil[i] = tolower(jawaban[i]);
+	}
 	
-	return jawaban;
+	return kecil;
 }
 
 
-void nilai(){
+void result(int *betul, int n){
+	int salah[n];
+	int nilaiAkhir[n];
 
+	cout << "========================================================================================\n";
+	cout << "Nomor\t||\tNama\t||\tBenar\t||\tSalah\t||\tNilai Akhir\t||\n";
+	cout << "========================================================================================\n";
+
+	for(int i = 1; i <= n; i++){
+		salah[i] = 5 - betul[i];
+		nilaiAkhir[i] = betul[i]*20;
+		cout << i << "\t|| " << nama[i] << "\t||\t" << betul[i] << "\t||\t";
+		cout << salah[i] << "\t||\t" << nilaiAkhir[i] << "\t||" << endl;
+
+	}
 }

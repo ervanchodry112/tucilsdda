@@ -30,8 +30,8 @@ char tanya[26][201] = {"Tombol di keyboard yang berfungsi menghapus karakter seb
                        "Perangkat input yang digunakan seseorang untuk berkomunikasi dengan sistem komputer disebut",
                        "Tombol di keyboard yang berfungsi menghapus karakter sebelah kiri kursor yaitu"};
 
-char jawab[26][51] = {"delete", "Macintosh","GUI","distro","2",
-                      "4","hardware","software","brainware","Mouse",
-                      "Kata","edoram","ALU","Power","CPU",
-                      "freeware","LAN","wireless","transmitter","buffering",
+char jawab[26][51] = {"delete", "macintosh","gui","distro","2",
+                      "4","hardware","software","brainware","mouse",
+                      "Kata","edoram","alu","power","cpu",
+                      "freeware","lan","wireless","transmitter","buffering",
                       "linux","unix","brainware","mouse","backspace"}; 
