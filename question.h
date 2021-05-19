@@ -1,8 +1,10 @@
 #include <iostream>
+#include <stdlib.h>
+#include <cstring>
+#include <time.h>
 
 
-
-char tanya[26][101] = {"Tombol di keyboard yang berfungsi menghapus karakter sebelah kanan kursor yaitu",
+char tanya[26][201] = {"Tombol di keyboard yang berfungsi menghapus karakter sebelah kanan kursor yaitu",
                        "Sistem operasi yang hanya dapat dijalankan pada komputer jenis apple", 
                        "Microsoft Windows merupakan sistem operasi komputer yang berbasis",
                        "Variasi dari sistem operasi linux biasa disebut dengan", 
