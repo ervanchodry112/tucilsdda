@@ -70,7 +70,8 @@ void menu(){
 }
 
 bool banding(char *ans, int value){
-	if(ans == jawab[value]){
+	char *cek = strstr(jawab[value], ans);
+	if(cek){
 		return true;
 	}else{
 		return false;
@@ -104,7 +105,7 @@ void result(int *betul, int n){
 	for(int i = 1; i <= n; i++){
 		salah[i] = 5 - betul[i];
 		nilaiAkhir[i] = betul[i]*20;
-		cout << i << "\t|| " << nama[i] << "\t||\t" << betul[i] << "\t||\t";
+		cout << i << "\t|| " << nama[i] << "\t||\t" << betul[i] << "\t\t||\t";
 		cout << salah[i] << "\t||\t" << nilaiAkhir[i] << "\t||" << endl;
 
 	}
